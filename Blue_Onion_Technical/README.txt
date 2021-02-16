@@ -1,10 +1,3 @@
-# Blue Onion Labs Take Home Test
-
-Hey! We are stoked that you are interested in joining the team at Blue Onion Labs.
-
-We have crafted the following test to see how you approach pulling and manipulating of data. We want to get a general idea of how you approach some common types of problems that we encounter here at Blue Onion (we are really proficient at integrations!)
-
-## Background
 [spacexdata.com](https://docs.spacexdata.com/) provides an API to query attributes about SpaceX launches (https://github.com/r-spacex/SpaceX-API/blob/master/docs/v4/README.md). For this exercise we are going to be working with one resource in particular:
 - The [Starlink Schema](https://github.com/r-spacex/SpaceX-API/blob/master/docs/v4/starlink/schema.md)
 
