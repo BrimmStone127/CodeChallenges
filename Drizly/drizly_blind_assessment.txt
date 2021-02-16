@@ -1,0 +1,50 @@
+DRIZLY BLIND ASSESSMENT
+
+1)
+Customer
+|_ customer_id INT NOT NULL PK
+|_ name TEXT NOT NULL
+|_ email TEXT NOT NULL 
+|_ active BOOLEAN NOT NULL
+
+Order
+|_ order_id INT NOT NULL PK
+|_ customer_id INT NOT NULL FK1
+|_ order_date DATE NOT NULL
+|_ total FLOAT NOT NULL 
+
+OrderItem
+|_ id INT NOT NULL PK
+|_ order_id INT NOT NULL FK
+|_ item_id INT NOT NULL
+|_ quantity INT NOT NULL
+|_ price FLOAT NOT NULL
+|_ tax FLOAT NOT NULL
+
+1. Write a query that will return the top 10 customers by amount spent.
+
+SELECT c.customer_id, c.name, SUM(o.total) AS amount_spent
+FROM Customer c JOIN Order o 
+ON c.customer_id = o.customer_id 
+GROUP BY c.customer_id, c.name
+ORDER BY SUM(o.total) DESC
+LIMIT 10;
+
+2. Write a query that that shows the 10 most popular items by total volume sold.
+
+SELECT item_id, SUM(quantity) as total_volume_sold
+FROM OrderItem
+GROUP BY item_id
+ORDER BY SUM(quantity) DESC
+LIMIT 10
+
+
+2) Please describe a time when a group project or assignment did not go as planned. How would you approach the situation differently in the future? Please include information about the purpose of the project, the people involved, what went wrong, the consequences of it not going as planned and how you would do things differently in the future.
+
+An assignment that did not go as planned was my first project as a team lead. Myself and two other developers were given a task to create a web app that would capture customer data and store a historical record of changes that would allow our Customer Success team to audit client data to help with various issues our clients were experiencing. I was assigned as the team leader and our manager sat down with me and described the project requirements. I took this information and created a development plan and assigned tasks to our team. 
+
+We spent a full sprint working on the project and built an app that could capture and display the data. When we demoed the app to our manager, they had imagined something completely different then what we had built. I had spent the majority of my time focusing on how the data would be captured and handled but I did not properly focus on how it should be displayed and used. From my manager's view the final app would not be helpful to our team despite the quality of the data we had captured. As a small startup, our company did not have the resources to continue with this project and we would have to either pause the project indefinitely or scrap it. This being the first project I was responsible for, I wanted it to be successful so I spent the weekend rebuilding the front end of the application. I showed it to my manager on Monday and they were pleased with the changes and decided to keep the project. The application was deployed and was useful to multiple teams in the company. 
+
+If I did this project over again I would have done a better job communicating with my manager to understand how they envisioned the final product. I would have asked better clarifying questions and done a more thorough job of prototyping.This project was a fantastic learning opportunity for me. I learned how important good requirements gathering is to the success of a project. I realized that in order for my projects to not get off track I will need to clearly communicate with the stake holders to understand what the needs of the project are. I also learned how important the users experience is to making a useful application.
+
+ 
